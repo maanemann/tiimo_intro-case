@@ -7,6 +7,7 @@ const PostCard = ({ blogpost, index }) => {
   return ( 
     <article key={index} className="
       relative max-w-full h-full bg-background rounded-lg shadow-md
+      hover:shadow-lg hover:-translate-y-1 transition-all
     ">
       <Link
         href={blogpost.blogURL}
