@@ -11,6 +11,7 @@ module.exports = {
         "textPrimary": "#000",
         "background": "#fff",
         "lightGray": "#EDEDED",
+        "inactive": "#A7A7A7",
       },
     },
   },

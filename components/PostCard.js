@@ -11,6 +11,8 @@ const PostCard = ({ blogpost, index }) => {
         target="_blank" rel="noopener noreferrer"
         className="h-full max-w-full"
       >
+
+        {/* responsive image container : */}
         <div className="
           aspect-[2/1] max-w-full
           relative overflow-hidden
@@ -28,6 +30,8 @@ const PostCard = ({ blogpost, index }) => {
             "
           />
         </div>
+
+        {/* Other post data : */}
         <div className="h-fit px-4 pt-3 pb-8">
           <h2
             className="h-fit font-bold mb-1"

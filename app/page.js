@@ -4,9 +4,12 @@ import Nav from "@/components/Nav";
 
 export default function Home() {
   return ( <>
+
+    {/* nav / tab bar component (vertical on desktop, horizontal on mobile) : */}
     <Nav />
+
     <main className="
-      w-[calc(100%-4rem)]
+      sm:w-[calc(100%-4rem)]
       ml-auto
     ">
       <div className="
@@ -21,6 +24,8 @@ export default function Home() {
           grid grid-flow-row grid-cols-1 gap-5
           sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4
         ">
+
+          {/* blog posts are fetched, incl error handling */}
           {fetch('https://api.tiimoapp.com/api/static/blogposts.json')
             .then((response) => {
               if (response.status >= 400 && response.status < 500) {
