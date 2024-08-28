@@ -22,12 +22,23 @@ export default function Home() {
           sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4
         ">
           {fetch('https://api.tiimoapp.com/api/static/blogposts.json')
-            .then((response) => response.json())
+            .then((response) => {
+              if (response.status >= 400 && response.status < 500) {
+                throw new Error('There was a problem receiving the content. Refreshing might help.');
+              }
+              else if (!response.ok) {
+                throw new Error('There was an error on the server, try again later.');
+              }
+              return response.json()
+            })
             .then((data) =>
               data.map((blogpost, index) => (
                 <PostCard key={index} blogpost={blogpost} />
               ))
-            )}
+            )
+            .catch((error) => (
+              <p>Error fetching blog posts: {error.message}</p>
+            ))}
         </div>
       </div>
     </main>
