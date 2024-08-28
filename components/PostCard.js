@@ -1,5 +1,7 @@
+
 import Image from "next/image";
 import Link from "next/link";
+import ArrowRight from "@/public/icons/arrow_right.svg";
 
 const PostCard = ({ blogpost, index }) => {
   return ( 
@@ -48,7 +50,11 @@ const PostCard = ({ blogpost, index }) => {
             "/>
             <span>Timestamp</span>
             <span className="ml-auto">
-              Read now →
+              {/* alt text intentionally left blank : */}
+              Read now
+              <Image src={ArrowRight} alt="" className="
+                inline-block w-4 h-auto
+              " />
             </span>
           </div>
         </div>
