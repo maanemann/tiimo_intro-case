@@ -4,12 +4,12 @@ import Link from "next/link";
 const PostCard = ({ blogpost, index }) => {
   return ( 
     <article key={index} className="
-      bg-background rounded-lg shadow-md max-w-full
+      relative max-w-full h-full bg-background rounded-lg shadow-md
     ">
       <Link
         href={blogpost.blogURL}
         target="_blank" rel="noopener noreferrer"
-        className="grid h-full max-w-full"
+        className="h-full max-w-full"
       >
         <div className="
           aspect-[2/1] max-w-full
@@ -28,14 +28,15 @@ const PostCard = ({ blogpost, index }) => {
             "
           />
         </div>
-        <div className="flex flex-col h-full px-4 py-3">
+        <div className="h-fit px-4 pt-3 pb-8">
           <h2
-            className="font-bold mb-1 flex-grow-0"
+            className="h-fit font-bold mb-1"
           >
             {blogpost.title}
           </h2>
           <div className="
-            w-full min-h-full mt-auto self-end flex text-xs
+            absolute bottom-3 w-[calc(100%-2rem)] h-fit
+            mt-auto flex text-xs
           ">
             <span>Author</span>
             <div className="
